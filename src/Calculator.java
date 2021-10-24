@@ -4,10 +4,10 @@ public class Calculator {
 
     public static final int FIRST_INDEX = 0;
     // TODO: 2021-10-21 ENUM에 이 밑에 4개를 넣는거임
-    public static final String PLUS = "+";
-    public static final String MINUS = "-";
-    public static final String MULTIPLICATION = "*";
-    public static final String DIVIDE = "/";
+    //public static final String PLUS = "+";
+    //public static final String MINUS = "-";
+    //public static final String MULTIPLICATION = "*";
+    //public static final String DIVIDE = "/";
 
     public static List<Integer> calculateNumber(List<Integer> numbers, List<String> formulas) {
             int first = numbers.remove(FIRST_INDEX);
@@ -17,13 +17,13 @@ public class Calculator {
             int result = 0;
 
             switch (formula) {
-                case PLUS:
+                case Constant.PLUS.getFormula():
                     numbers.add(FIRST_INDEX, Calculator.plus(first, next));
                     break;
-                case MINUS:
+                case Constant.MINUS.getFormula():
                     numbers.add(FIRST_INDEX, Calculator.minus(first, next));
                     break;
-                case MULTIPLICATION:
+                case Constant.MULTIPLICATION.getFormula():
                     numbers.add(FIRST_INDEX, Calculator.multiply(first, next));
                     break;
                 default:

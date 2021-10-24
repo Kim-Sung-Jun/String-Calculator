@@ -17,7 +17,7 @@ public class FormulaSplitter {
     private void split(String input) {
         String[] inputs = input.split(CRITERIA);
         for (String splitInput : inputs) {
-            if (splitInput.equals(Calculator.PLUS)
+            if (splitInput.equals(Constant.PLUS.getFormula())
                     || splitInput.equals(Calculator.MINUS)
                     || splitInput.equals(Calculator.MULTIPLICATION)
                     || splitInput.equals(Calculator.DIVIDE)) {
