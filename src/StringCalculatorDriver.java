@@ -5,8 +5,7 @@ public class StringCalculatorDriver {
     public static void main(String[] args) {
         try {
             FormulaSplitter formulaSplitter = new FormulaSplitter(Input.inputString());
-            List<Integer> result = Calculator.calculateNumber(
-                    formulaSplitter.getNumbers(), formulaSplitter.getFormulas());
+            List<Integer> result = Calculator.calculateNumber(formulaSplitter.getNumbers(), formulaSplitter.getFormulas());
             Output.printResult(result);
         } catch (IllegalArgumentException e) {
             Output.printExceptionMsg(e.getMessage());

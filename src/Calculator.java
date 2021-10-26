@@ -1,4 +1,6 @@
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Calculator {
 
@@ -10,7 +12,13 @@ public class Calculator {
     //public static final String DIVIDE = "/";
 
     public static List<Integer> calculateNumber(List<Integer> numbers, List<String> formulas) {
-            int first = numbers.remove(FIRST_INDEX);
+        Map<String, Constant> formulaMap = new HashMap<>();
+        formulaMap.put(Constant.PLUS.getFormula(), Constant.PLUS);
+        formulaMap.put(Constant.MINUS.getFormula(), Constant.MINUS);
+        formulaMap.put(Constant.MULTIPLICATION.getFormula(), Constant.MULTIPLICATION);
+        formulaMap.put(Constant.DIVIDE.getFormula(), Constant.DIVIDE);
+
+        int first = numbers.remove(FIRST_INDEX);
         while (!formulas.isEmpty()) {
             int next = numbers.remove(FIRST_INDEX);
             String formula = formulas.remove(FIRST_INDEX);
@@ -34,19 +42,19 @@ public class Calculator {
         return numbers;
     }
 
-    private static int plus(int firstNumber, int nextNumber) {
-        return firstNumber + nextNumber;
-    }
-
-    private static int minus(int firstNumber, int nextNumber) {
-        return firstNumber - nextNumber;
-    }
-
-    private static int multiply(int firstNumber, int nextNumber) {
-        return firstNumber * nextNumber;
-    }
-
-    private static int divide(int firstNumber, int nextNumber) {
-        return firstNumber / nextNumber;
-    }
+//    private static int plus(int firstNumber, int nextNumber) {
+//        return firstNumber + nextNumber;
+//    }
+//
+//    private static int minus(int firstNumber, int nextNumber) {
+//        return firstNumber - nextNumber;
+//    }
+//
+//    private static int multiply(int firstNumber, int nextNumber) {
+//        return firstNumber * nextNumber;
+//    }
+//
+//    private static int divide(int firstNumber, int nextNumber) {
+//        return firstNumber / nextNumber;
+//    }
 }

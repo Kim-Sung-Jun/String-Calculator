@@ -18,9 +18,9 @@ public class FormulaSplitter {
         String[] inputs = input.split(CRITERIA);
         for (String splitInput : inputs) {
             if (splitInput.equals(Constant.PLUS.getFormula())
-                    || splitInput.equals(Calculator.MINUS)
-                    || splitInput.equals(Calculator.MULTIPLICATION)
-                    || splitInput.equals(Calculator.DIVIDE)) {
+                    || splitInput.equals(Constant.MINUS.getFormula())
+                    || splitInput.equals(Constant.MULTIPLICATION.getFormula())
+                    || splitInput.equals(Constant.DIVIDE.getFormula())) {
                 formulas.add(splitInput);
             } else {
                 numbers.add(Integer.parseInt(splitInput));
